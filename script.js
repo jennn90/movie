@@ -27,26 +27,30 @@
 
   // Modal
   const modal = document.getElementById('modal');
-  function openModal(i){
-    const m = movies[i];
-    document.getElementById('m-img').src = m.img;
-    document.getElementById('m-title').textContent = m.title;
-    document.getElementById('m-rating').textContent = `⭐ ${m.rating} / 10`;
-    document.getElementById('m-synopsis').textContent = m.synopsis;
-    document.getElementById('m-genre').textContent = m.genre;
-    document.getElementById('m-year').textContent = m.year;
-    document.getElementById('m-director').textContent = m.director;
-    document.getElementById('m-cast').textContent = m.cast;
-   document.getElementById('m-trailer').src = m.trailer;
-    modal.classList.add('open');
-  }
+function openModal(i){
+  const m = movies[i];
+
+  const img = document.getElementById('m-img');
+  const trailer = document.getElementById('m-trailer');
+
+  img.src = m.img;
+  trailer.src = m.trailer;
+
+  document.getElementById('m-title').textContent = m.title;
+  document.getElementById('m-rating').textContent = `⭐ ${m.rating} / 10`;
+  document.getElementById('m-synopsis').textContent = m.synopsis;
+  document.getElementById('m-genre').textContent = m.genre;
+  document.getElementById('m-year').textContent = m.year;
+  document.getElementById('m-director').textContent = m.director;
+  document.getElementById('m-cast').textContent = m.cast;
+
+  modal.classList.add('open');
+}
 document.getElementById('closeModal').onclick = ()=>{
   modal.classList.remove('open');
   document.getElementById('m-trailer').src = "";
+  document.getElementById('m-img').src = "";
 };
-  modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('open')});
-
   // Show more / less
   const aboutBtn = document.getElementById('toggleAbout');
   const aboutExtra = document.getElementById('about-extra');
