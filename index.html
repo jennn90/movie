@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CineVerse — Movie Showcase</title>
+<meta name="description" content="An interactive movie showcase featuring posters, synopses, ratings, and user reviews.">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🎬 CineVerse</h1>
+  <nav>
+    <ul>
+      <li><a href="#gallery">Movies</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h2>Discover Stories That <span style="color:var(--accent)">Move You</span></h2>
+      <p>Explore handpicked classics and modern hits. Click any poster to dive into ratings, cast, and synopsis. Then leave your <mark>own review</mark> below.</p>
+      <a href="#gallery" class="btn">Browse Movies</a>
+      <a href="#reviews" class="btn ghost" style="margin-left:8px">Write a Review</a>
+    </div>
+    <aside class="highlight">
+      <h3>🔥 Trending This Week</h3>
+      <ul>
+        <li>Inception — <strong>9.1</strong></li>
+        <li>Interstellar — <strong>8.9</strong></li>
+        <li>The Dark Knight — <strong>9.3</strong></li>
+      </ul>
+    </aside>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <h2>Movie <span>Gallery</span></h2>
+    <p class="sub">Click on a poster to view full details.</p>
+    <div class="grid" id="movie-grid"></div>
+  </section>
+
+  <hr>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About <span>CineVerse</span></h2>
+    <p>CineVerse is a celebration of cinematic storytelling — from <em>noir thrillers</em> to <strong>sci-fi epics</strong>. Founded by film lovers, for film lovers.</p>
+
+    <p id="about-extra">
+      Every recommendation is curated by an editorial team passionate about the craft of filmmaking. We believe a great <abbr title="Motion Picture">MP</abbr> stays with you long after the credits roll.
+    </p>
+
+    <button class="btn ghost" id="toggleAbout" style="margin-top:14px">Show More</button>
+
+    <blockquote>
+      Cinema is a matter of what's in the frame and what's out.
+      <cite>— Martin Scorsese</cite>
+    </blockquote>
+
+    <div class="lists">
+      <div>
+        <h3>🏆 Top 3 Must-Watch (Ranked)</h3>
+        <ol>
+          <li>The Godfather (1972)</li>
+          <li>The Dark Knight (2008)</li>
+          <li>Pulp Fiction (1994)</li>
+        </ol>
+      </div>
+      <div>
+        <h3>🎭 Popular Genres</h3>
+        <ul>
+          <li>Sci-Fi &amp; Fantasy</li>
+          <li>Crime &amp; Thriller</li>
+          <li>Drama &amp; Romance</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <h2>Submit a <span>Review</span></h2>
+
+    <form id="reviewForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="text" id="movie" placeholder="Movie" required>
+
+      <select id="rating" required>
+        <option value="">Select rating</option>
+        <option value="5">⭐⭐⭐⭐⭐</option>
+        <option value="4">⭐⭐⭐⭐</option>
+        <option value="3">⭐⭐⭐</option>
+        <option value="2">⭐⭐</option>
+        <option value="1">⭐</option>
+      </select>
+
+      <textarea id="comment" placeholder="Your Review" required></textarea>
+
+      <button type="submit" class="btn">Post Review</button>
+    </form>
+
+    <div id="reviews-list"></div>
+  </section>
+
+</main>
+
+<!-- MODAL -->
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <img id="m-img" src="">
+    <div class="modal-body">
+      <button class="close" id="closeModal">&times;</button>
+
+      <h3 id="m-title"></h3>
+
+      <div class="rating" id="m-rating"></div>
+
+      <p><strong>Genre:</strong> <span id="m-genre"></span></p>
+      <p><strong>Year:</strong> <span id="m-year"></span></p>
+      <p><strong>Director:</strong> <span id="m-director"></span></p>
+      <p><strong>Cast:</strong> <span id="m-cast"></span></p>
+
+      <p id="m-synopsis"></p>
+    </div>
+  </div>
+</div>
+
+<button id="toTop">↑</button>
+
+<footer>
+ <p>© 2026 <strong>CineVerse</strong> — Built with ❤️ for movie lovers. </p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
